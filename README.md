@@ -1,106 +1,101 @@
-About the Project
-The repository provides an example implementation of the Cucumber framework for creating test automation scripts in a behavior-driven format. It is designed to make testing more accessible and understandable for all stakeholders.
+Cucumber Project
+Welcome to the Cucumber Project repository! This project showcases the use of the Cucumber framework for creating test automation scripts using Behavior-Driven Development (BDD).
 
-Key Objectives:
-Write test scenarios in plain English using Gherkin syntax.
-Support collaboration between technical and non-technical team members.
-Simplify automation using step definitions written in Java.
+Table of Contents
+Overview
 Features
-Behavior-Driven Development: Write tests that describe application behavior in business terms.
-Gherkin Syntax: Readable test scenarios for non-technical stakeholders.
-Step Definitions: Map Gherkin steps to executable code.
-Reusable Components: Modular and scalable test automation structure.
-Getting Started
 Prerequisites
-Ensure you have the following installed:
+Setup and Installation
+Usage
+Project Structure
+Contributing
 
-Java Development Kit (JDK) 8 or higher
+Overview
+Cucumber is a BDD tool that bridges the gap between technical and non-technical team members by allowing tests to be written in plain English using Gherkin syntax.
+
+This project demonstrates:
+
+Writing readable and maintainable test cases.
+Mapping feature files to step definitions.
+Running automated tests in Java.
+Features
+Readable Test Scenarios: Write human-readable feature files in Gherkin.
+Test Automation: Automate test execution with Java and tools like Selenium (if applicable).
+Reusable Code: Organize code for scalability and reusability.
+Prerequisites
+Before starting, ensure you have the following installed:
+
+Java 8 or higher
 Maven or Gradle
-An IDE like IntelliJ IDEA or Eclipse
-Installation
+IntelliJ IDEA, Eclipse, or any preferred IDE
+Setup and Installation
 Clone the repository:
 
-bash
-Copy
-Edit
-git clone https://github.com/shruthi72/Cucumber.git
-cd Cucumber
+git clone https://github.com/shruthi72/Cucumber.git  
+cd Cucumber  
 Install dependencies using Maven:
 
-bash
-Copy
-Edit
-mvn clean install
+mvn clean install  
+Open the project in your preferred IDE.
+
 Usage
 Running Tests
-Add your test scenarios in the features folder using Gherkin syntax.
-Implement step definitions in the src/test/java directory.
-Execute tests using Maven:
-bash
-Copy
-Edit
-mvn test
+Add Gherkin feature files in the src/test/resources/features directory.
+Implement step definitions in src/test/java.
+Use Maven to execute tests:
+
+mvn test  
 Example
-Gherkin Scenario
+Gherkin Feature File (login.feature)
 gherkin
-Copy
-Edit
-Feature: Login functionality
 
-  Scenario: Successful login with valid credentials
-    Given I am on the login page
-    When I enter valid username and password
-    Then I should see the dashboard
-Step Definition
+Feature: Login functionality  
+
+  Scenario: Successful login with valid credentials  
+    Given I am on the login page  
+    When I enter a valid username and password  
+    Then I should see the dashboard  
+Step Definition (LoginSteps.java)
 java
-Copy
-Edit
-@Given("^I am on the login page$")
-public void navigateToLoginPage() {
-    // Code to navigate to login page
-}
 
-@When("^I enter valid username and password$")
-public void enterCredentials() {
-    // Code to enter username and password
-}
+@Given("^I am on the login page$")  
+public void navigateToLoginPage() {  
+    // Code to navigate to the login page  
+}  
 
-@Then("^I should see the dashboard$")
-public void verifyDashboard() {
-    // Code to verify the dashboard
-}
+@When("^I enter a valid username and password$")  
+public void enterCredentials() {  
+    // Code to enter login credentials  
+}  
+
+@Then("^I should see the dashboard$")  
+public void verifyDashboard() {  
+    // Code to verify the dashboard  
+}  
+
 Project Structure
-bash
-Copy
-Edit
-Cucumber/
-├── src/
-│   ├── test/
-│   │   ├── java/
-│   │   │   ├── steps/         # Step definitions
-│   │   │   └── runners/       # Test runners
-│   │   └── resources/
-│   │       ├── features/      # Gherkin feature files
-│   │       └── config/        # Config files
-├── pom.xml                    # Maven dependencies
-└── README.md                  # Project documentation
+Cucumber/  
+├── src/  
+│   ├── test/  
+│   │   ├── java/  
+│   │   │   ├── steps/         # Step definitions  
+│   │   │   └── runners/       # Test runners  
+│   │   └── resources/  
+│   │       ├── features/      # Gherkin feature files  
+│   │       └── config/        # Configuration files  
+├── pom.xml                    # Maven configuration  
+└── README.md                  # Project documentation  
 Contributing
-Contributions are welcome! Please follow these steps:
+Contributions are welcome!
 
 Fork the repository.
 Create a feature branch:
-bash
-Copy
-Edit
-git checkout -b feature/your-feature
+
+git checkout -b feature/your-feature  
 Commit your changes:
-bash
-Copy
-Edit
-git commit -m "Add your message here"
-Push to your branch:
-bash
-Copy
-Edit
-git push origin feature/your-feature
+
+git commit -m "Add your feature description"  
+Push your branch:
+
+git push origin feature/your-feature  
 Open a pull request.
